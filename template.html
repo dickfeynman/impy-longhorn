@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <title>$title$</title>
+    <link href="css/ut-impress-neon.css" rel="stylesheet" type="text/css" title="Fancy"/>
+    <link href='http://fonts.googleapis.com/css?family=Alegreya' rel='stylesheet' type='text/css' />
+    <!-- A custom footer -->
+    <style type="text/css">
+    section:after {
+      font-size : 0.5em ;
+      text-align : center ;
+      content : "$footertext$" ;
+      background-color : transparent ;
+      position : absolute ;
+      top : 700px;
+      left : 350px;
+    }
+</style>
+</head>
+<body class="impress-not-supported">
+<div class="fallback-message">
+     impress.js is not supported by your browser, sorry.
+  </div>
+
+  <div id="impress">
+    $body$
+    </div>
+
+    <script src="http://netdna.impressjscdn.com/impressjs/0.5.3/js/impress.js"></script>
+    $if(math)$
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        extensions: ["tex2jax.js"],
+        jax: ["input/TeX","output/HTML-CSS"],
+        tex2jax: {inlineMath: [["$$","$$"],["\\(","\\)"]]}
+      });
+    </script>
+    $math$
+    $endif$
+
+    <script>impress().init();</script>
+    </body>
+    </html>

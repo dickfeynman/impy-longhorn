@@ -1,0 +1,275 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+body {
+	line-height: 1;
+    font-family: Arial, sans-serif;
+    min-height: 740px;
+	background: url("../backgrounds/tweed.png");
+}
+
+.slide-footer {
+/*   margin-left: -100px;
+   margin-right: -100px; */
+   padding-left: 80px; 
+   background: rgba(215,95,05,0.8);
+   
+   position: fixed; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+
+	font-family : sans-serif ;
+	font-size : 0.8em ;
+}
+
+@font-face {
+	font-family: CMSS;
+	src: url('fonts/cm-unicode-0.6.3a/cmunss.otf');
+}
+
+@font-face {
+	font-family: CMSSDC;
+	src: url('fonts/cm-unicode-0.6.3a/cmunssdc.otf');
+}
+
+
+h1 {
+/*   width: 1000px*/
+   margin-left: -100px;
+   margin-right: -100px;
+   padding-left: 80px;
+   padding-top: 20px;
+   margin-top: -30px;
+   margin-bottom: 60px;
+   min-height: 100px;
+   color : #fff;
+   text-shadow: 0 0 3px #fff, 0 0 50px #fff ;
+   font-family : CMSSDC, sans-serif ;
+   font-size : 2em ;
+   background: rgba(215,95,05,0.8);
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+
+
+blockquote, q {
+	quotes: none;
+	font-family: ;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+a {
+    color: inherit;
+/*    text-decoration: none; */
+    padding: 0 0.1em;
+/*    background: rgba(2,255,255,1);*/
+    text-shadow: inherit;
+/*    border-radius: 0.2em; */
+
+    -webkit-transition: 0.5s;
+    -moz-transition:    0.5s;
+    -ms-transition:     0.5s;
+    -o-transition:      0.5s;
+    transition:         0.5s;
+}
+
+h1 a {
+	text-decoration: inherit;
+}
+
+a:hover, a:focus {
+    text-shadow: 0px 0px 20px;
+}
+
+/*
+ * Now, we get to our CSS settings.
+ */
+
+/* All versions and animations of a slide put together form a section*/
+
+section { 
+  overflow : hidden ;  /* Clip, and don't provide scrollbars. */
+/*  border-style : solid ;
+  border-width : 2px ;
+  border-color: red; */
+  height : 768px ;
+  word-wrap: break-word;
+/*  background-color: white;*/
+  background: url("../backgrounds/ricepaper2.png");
+}
+
+section:after {
+      font-size : 0.5em ;
+      content : "(c\) $author$" ;
+/*	  vertical-align: baseline;
+      text-align : center ; */
+	  background: rgba(215,95,05,0.8);
+
+      position : fixed ;
+      bottom : 20px;
+//     left : 100px;
+	  margin-left: -310px;
+//	  margin-right: 0;
+	  margin-bottom: 10px;
+//	  width: 2000px;
+}
+
+b, strong { font-weight: bold }
+i, em { font-style: italic }
+
+ol, ul { 
+  padding-left : 2em ;
+}
+
+
+/*Fallback message in case no IMPRESS */
+
+.fallback-message {
+    font-family: sans-serif;
+    line-height: 1.3;
+
+    width: 780px;
+    padding: 10px 10px 0;
+    margin: 20px auto;
+
+    border: 1px solid #E4C652;
+    border-radius: 10px;
+    background: #EEDC94;
+}
+
+.fallback-message p {
+    margin-bottom: 10px;
+}
+
+.impress-supported .fallback-message {
+    display: none;
+}
+
+/* STEP is the class for the actual slides*/
+/* This is the most important class*/
+.step {
+    position: relative;
+    width: 1100px;
+    padding: 100px;
+    margin: 20px auto;
+
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing:    border-box;
+    -ms-box-sizing:     border-box;
+    -o-box-sizing:      border-box;
+    box-sizing:         border-box;
+
+    font-family: CMSS, 'Alegreya', serif;
+    font-size: 32px;
+    line-height: 1.5;
+}
+
+.impress-enabled .step {
+    margin: 0;
+    opacity: 0.3;
+
+    -webkit-transition: opacity 1s;
+    -moz-transition:    opacity 1s;
+    -ms-transition:     opacity 1s;
+    -o-transition:      opacity 1s;
+    transition:         opacity 1s;
+}
+
+.impress-enabled .step.active { opacity: 1 }
+
+/* The SLIDE class seems unnecessary? */
+.slide {
+    display: block;
+
+    width: 900px;
+    height: 700px;
+    padding: 40px 60px;
+
+    background-color: white;
+    border: 1px solid rgba(0, 0, 0, .3);
+    border-radius: 10px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
+
+    color: rgb(102, 102, 102);
+    text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
+
+    font-family: Arial, sans-serif;
+    font-size: 30px;
+    line-height: 36px;
+    letter-spacing: -1px;
+}
+
+.slide q {
+    display: block;
+    font-size: 50px;
+    line-height: 72px;
+
+    margin-top: 100px;
+}
+
+.slide q strong {
+    white-space: nowrap;
+}
+
+/*An overview of the presentation*/
+
+#overview { display: none }
+#overviewmath { display: none }
+
+.impress-on-overview .step {
+    opacity: 1;
+    cursor: pointer;
+}
+.impress-on-overviewmath .step {
+    opacity: 1;
+    cursor: pointer;
+}
+
+/*WTF is this for?*/
+.impress-enabled          { pointer-events: none }
+.impress-enabled #impress { pointer-events: auto }
+
+/*LISTS*/
+li {
+  line-height: 2;
+}
+
+
